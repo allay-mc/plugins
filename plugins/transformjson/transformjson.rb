@@ -17,9 +17,9 @@ config = JSON.parse!(ARGV.first || "{}").merge({ "indent" => 2, "after-colon" =>
     transformed = JSON.generate(json_data, {
       :indent => " " * config["indent"],
       :space => " " * config["after-colon"],
-      :space_before => " " * config["before-colon"]
-      :array_nl => "\n" * config["array-indent"]
-      :object_nl => "\n" * config["object-indent"]
+      :space_before => " " * config["before-colon"],
+      :array_nl => "\n" * config["array-indent"],
+      :object_nl => "\n" * config["object-indent"],
     })
     json_file.open('w') do |f|
       json_file.write(transformed)
