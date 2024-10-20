@@ -8,7 +8,7 @@ RP = PREBUILD.join("RP")
 SP = PREBUILD.join("SP")
 WT = PREBUILD.join("WT")
 
-config = JSON.parse!(ARGV.first || "{}").merge({ "indent" => 2, "after-colon" => 1, "before-colon" => 0, "array-indent" = 1, "object-indent" => 1 }) { |key, old, new| old }
+config = JSON.parse!(ARGV.first || "{}").merge({ "indent" => 2, "after-colon" => 1, "before-colon" => 0, "array-indent" => 1, "object-indent" => 1 }) { |key, old, new| old }
 
 [BP, RP, SP, WT].each do |path|
   path.glob "**/*.json" do |json_file|
